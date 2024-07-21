@@ -1,0 +1,731 @@
+{
+  "settings": {
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "fr"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "for,goodby,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,okay,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "howdi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hr,hub,what": {
+            "intent": "hrhub.definition",
+            "domain": "default"
+          },
+          "candid,for,hr,hub": {
+            "intent": "hrhub.candidates",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "hrhub.definition": "default",
+          "hrhub.candidates": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "okay see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "whats hr hub",
+            "intent": "hrhub.definition"
+          },
+          {
+            "domain": "default",
+            "utterance": "hr hub for candidates",
+            "intent": "hrhub.candidates"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "for": 1,
+              "now": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "okay": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "hello": 1,
+              "hi": 1,
+              "howdi": 1,
+              "what": 1,
+              "hr": 1,
+              "hub": 1,
+              "candid": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "hrhub.definition": 1,
+              "hrhub.candidates": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "for": 1,
+                "now": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "okay": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "howdi": 1
+              },
+              "hrhub.definition": {
+                "what": 1,
+                "hr": 1,
+                "hub": 1
+              },
+              "hrhub.candidates": {
+                "hr": 1,
+                "hub": 1,
+                "for": 1,
+                "candid": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye",
+                "hrhub.candidates"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "okay": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "howdi": [
+                "greetings.hello"
+              ],
+              "what": [
+                "hrhub.definition"
+              ],
+              "hr": [
+                "hrhub.definition",
+                "hrhub.candidates"
+              ],
+              "hub": [
+                "hrhub.definition",
+                "hrhub.candidates"
+              ],
+              "candid": [
+                "hrhub.candidates"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "for",
+                "now",
+                "bye",
+                "take",
+                "care",
+                "okay",
+                "see",
+                "you",
+                "later",
+                "i",
+                "must",
+                "go",
+                "hello",
+                "hi",
+                "howdi",
+                "what",
+                "hr",
+                "hub",
+                "candid"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "hrhub.definition",
+                "hrhub.candidates"
+              ],
+              "perceptrons": [
+                [
+                  3.871967315673828,
+                  3.019577980041504,
+                  4.576019763946533,
+                  4.3207926750183105,
+                  3.6238059997558594,
+                  3.6238059997558594,
+                  2.9191715717315674,
+                  2.9191715717315674,
+                  2.9191715717315674,
+                  2.9191715717315674,
+                  3.8944549560546875,
+                  3.8944549560546875,
+                  3.8944549560546875,
+                  -2.559575080871582,
+                  -2.5417466163635254,
+                  -2.5232815742492676,
+                  -0.5272834300994873,
+                  -2.164991617202759,
+                  -2.164991617202759,
+                  -1.515107274055481,
+                  2.587165092329454
+                ],
+                [
+                  -1.6949938535690308,
+                  -2.6024889945983887,
+                  -2.1320652961730957,
+                  -2.433314561843872,
+                  -1.996242880821228,
+                  -1.996242880821228,
+                  -1.6101574897766113,
+                  -1.6101574897766113,
+                  -1.6101574897766113,
+                  -1.6101574897766113,
+                  -2.139855146408081,
+                  -2.139855146408081,
+                  -2.139855146408081,
+                  7.695353984832764,
+                  7.732395648956299,
+                  7.680135726928711,
+                  -1.8346470594406128,
+                  -2.305070400238037,
+                  -2.305070400238037,
+                  -0.4340701997280121,
+                  6.471103242573174
+                ],
+                [
+                  -0.04247388616204262,
+                  -3.6410465240478516,
+                  -0.0800582766532898,
+                  -0.22579166293144226,
+                  -0.19604313373565674,
+                  -0.19604313373565674,
+                  -0.1656917929649353,
+                  -0.1656917929649353,
+                  -0.1656917929649353,
+                  -0.1656917929649353,
+                  -0.20547865331172943,
+                  -0.20547865331172943,
+                  -0.20547865331172943,
+                  -0.5259056687355042,
+                  -0.5207126140594482,
+                  -0.5154300332069397,
+                  6.897765159606934,
+                  3.357133626937866,
+                  3.357133626937866,
+                  -3.5472419261932373,
+                  0.546625194069877
+                ],
+                [
+                  -1.1882212162017822,
+                  3.8920116424560547,
+                  -2.263535261154175,
+                  -1.1807976961135864,
+                  -0.08456090092658997,
+                  -0.08456090092658997,
+                  -0.108693927526474,
+                  -0.108693927526474,
+                  -0.108693927526474,
+                  -0.108693927526474,
+                  -0.10007043927907944,
+                  -0.10007043927907944,
+                  -0.10007043927907944,
+                  -0.14199328422546387,
+                  -0.1370166838169098,
+                  -0.13221052289009094,
+                  -3.8919970989227295,
+                  2.248744249343872,
+                  2.248744249343872,
+                  6.148172378540039,
+                  -0.40594043292945897
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "fr": {
+        "settings": {
+          "locale": "fr",
+          "trainByDomain": false,
+          "tag": "domain-manager-fr",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "salut": {
+            "intent": "salut",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "salut",
+            "domain": "default"
+          },
+          "bonjour": {
+            "intent": "salut",
+            "domain": "default"
+          },
+          "ca,comment,salut,va": {
+            "intent": "salut.question",
+            "domain": "default"
+          },
+          "bonjour,comment,vas-tu": {
+            "intent": "salut.question",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "salut": "default",
+          "salut.question": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Salut",
+            "intent": "salut"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey",
+            "intent": "salut"
+          },
+          {
+            "domain": "default",
+            "utterance": "Bonjour",
+            "intent": "salut"
+          },
+          {
+            "domain": "default",
+            "utterance": "Salut, Comment ca va?",
+            "intent": "salut.question"
+          },
+          {
+            "domain": "default",
+            "utterance": "Bonjour, Comment vas-tu?",
+            "intent": "salut.question"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "fr",
+              "tag": "nlu-fr",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "salut": 1,
+              "hey": 1,
+              "bonjour": 1,
+              "comment": 1,
+              "ca": 1,
+              "va": 1,
+              "vas-tu": 1
+            },
+            "intents": {
+              "salut": 1,
+              "salut.question": 1
+            },
+            "intentFeatures": {
+              "salut": {
+                "salut": 1,
+                "hey": 1,
+                "bonjour": 1
+              },
+              "salut.question": {
+                "salut": 1,
+                "comment": 1,
+                "ca": 1,
+                "va": 1,
+                "bonjour": 1,
+                "vas-tu": 1
+              }
+            },
+            "featuresToIntent": {
+              "salut": [
+                "salut",
+                "salut.question"
+              ],
+              "hey": [
+                "salut"
+              ],
+              "bonjour": [
+                "salut",
+                "salut.question"
+              ],
+              "comment": [
+                "salut.question"
+              ],
+              "ca": [
+                "salut.question"
+              ],
+              "va": [
+                "salut.question"
+              ],
+              "vas-tu": [
+                "salut.question"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "fr",
+                "tag": "nlu-fr",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "salut",
+                "hey",
+                "bonjour",
+                "comment",
+                "ca",
+                "va",
+                "vas-tu"
+              ],
+              "intents": [
+                "salut",
+                "salut.question"
+              ],
+              "perceptrons": [
+                [
+                  5.75874662399292,
+                  5.813814163208008,
+                  5.5216474533081055,
+                  -8.509382247924805,
+                  -3.033658742904663,
+                  -3.033658742904663,
+                  -5.474762439727783,
+                  8.543703851176723
+                ],
+                [
+                  -0.014995475299656391,
+                  -0.742426335811615,
+                  0.3483565151691437,
+                  8.544692993164062,
+                  2.9955592155456543,
+                  2.9955592155456543,
+                  5.547549724578857,
+                  -0.2175578101780552
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye for now"
+      ],
+      [
+        "en",
+        "bye bye take care"
+      ],
+      [
+        "en",
+        "okay see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "whats hr hub"
+      ],
+      [
+        "en",
+        "hr hub for candidates"
+      ],
+      [
+        "fr",
+        "Salut"
+      ],
+      [
+        "fr",
+        "Hey"
+      ],
+      [
+        "fr",
+        "Bonjour"
+      ],
+      [
+        "fr",
+        "Salut, Comment ca va?"
+      ],
+      [
+        "fr",
+        "Bonjour, Comment vas-tu?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "Till next time"
+          },
+          {
+            "answer": "see you soon!"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hey there!"
+          },
+          {
+            "answer": "Greetings!"
+          }
+        ],
+        "hrhub.definition": [
+          {
+            "answer": "We aim to help HR cabinets & headhunters to have the best recruitment experience!"
+          }
+        ],
+        "hrhub.candidates": [
+          {
+            "answer": "We provide for our candidates a recommendation system and an E-learning side to improve their skills for a better future."
+          }
+        ]
+      },
+      "fr": {
+        "salut": [
+          {
+            "answer": "Salut"
+          },
+          {
+            "answer": "Bonjour!"
+          }
+        ],
+        "salut.question": [
+          {
+            "answer": "Très bien, merci"
+          },
+          {
+            "answer": "Comme ci, Comme ca"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

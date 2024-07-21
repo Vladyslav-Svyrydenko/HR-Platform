@@ -1,0 +1,52 @@
+#darkMode {
+  background: transparent url("../img/moon.png") no-repeat center;
+  background-size: 20px 20px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+  background-color: black;
+  outline: 0px;
+}
+
+#darkMode.clicked {
+  background-size: 20px 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: transparent url("../img/lightmode.png") no-repeat center;
+  background-color: rgb(243, 201, 16);
+  outline: 0px;
+}
+:root {
+  --blue: #0d1117;
+  --white: rgb(236, 236, 236);
+}
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--blue);
+  --font-weight: 400;
+}
+body.dark {
+  --background-color: var(--blue);
+  --text-color: var(--white);
+  --font-weight: 500;
+}
+body.dark nav {
+  background-color: #161b22;
+}
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+}
+body.light .titlelightmode {
+  color: #334155;
+}
+
+body.dark .bannerdarkmode {
+  background-color: #d7dee4;
+}

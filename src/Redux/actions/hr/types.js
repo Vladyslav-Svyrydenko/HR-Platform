@@ -1,0 +1,5 @@
+export const REGISTER_SUCCESS_HR = "REGISTER_SUCCESS";
+export const REGISTER_FAIL_HR = "REGISTER_FAIL";
+
+export const SET_MESSAGE_HR = "SET_MESSAGE";
+export const CLEAR_MESSAGE_HR = "CLEAR_MESSAGE";

@@ -1,0 +1,21 @@
+.heading {
+  text-align: center;
+}
+.testcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: justify;
+  width: 80vw;
+}
+
+.buttons {
+  float: right;
+  margin: 0.5% 4%;
+  background: #233a79;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1% 1%;
+  display: block;
+  color: white;
+}

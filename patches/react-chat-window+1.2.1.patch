@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-chat-window/es/styles/chat-window.css b/node_modules/react-chat-window/es/styles/chat-window.css
+index 8bf0eb2..2d18db8 100644
+--- a/node_modules/react-chat-window/es/styles/chat-window.css
++++ b/node_modules/react-chat-window/es/styles/chat-window.css
+@@ -1,6 +1,6 @@
+ .sc-chat-window {
+   width: 370px;
+-  height: calc(100% - 120px);
++  height: calc(100% - 200px);
+   max-height: 590px;
+   position: fixed;
+   right: 25px;
